@@ -1,6 +1,6 @@
 const arr = [1, 2, 3, 4, 5];
 
-const my_pull = (arr, el) => {
+const my_unshift = (arr, el) => {
 
     let newArray = [];
 
@@ -13,4 +13,4 @@ const my_pull = (arr, el) => {
     return newArray;
 };
 
-console.log(my_pull(arr, 'first'))
+console.log(my_unshift(arr, 'first'))
