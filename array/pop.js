@@ -1,18 +1,24 @@
-const arr = [1, 2, 3, 4, 5];
+// Функция удаляет последний элемент массива.
+// Функция возвращает последний элемент массива.
+// Массив на котором была вызвана функция модифицируется.
 
-const my_pop = (arr) => {
+const testArr = [1, 2, 3, 4, 5];
 
-    if (arr.length === 0) {
+Array.prototype.my_pop = function () {
+
+    if (this.length === 0) {
         return undefined;
     }
 
-    let newArray = [];
+    const lastElement = this[this.length-1];
 
-    for (let i = 0; i < arr.length-1; i++){
-        newArray[i] = arr[i];
-    }
 
-    return newArray;
+    this.length = this.length-1;
+
+    return lastElement;
 };
 
-console.log(my_pop(arr));
+const result = testArr.my_pop();
+
+console.log(result);
+console.log(testArr);
