@@ -1,13 +1,22 @@
+
+// Функция добавляет новый элемент в конец массива.
+// Функция возвращает длинну нового массива.
+// Массив на котором была вызвана функция модифицируется.
+
 const arr = [1, 2, 3, 4, 5];
 
-// function my_push (arr, el) {
-//     arr[arr.length] = el;
-//     return arr;
-// }
+Array.prototype.my_push = function (el) {
 
-const my_push = (arr, el) => {
-    arr[arr.length] = el;
-    return arr;
-};
+    if (!arr) {
+        return 0;
+    }
+    
+    this[this.length] = el;
 
-console.log(my_push(arr, 66))
+    return this.length;
+}
+
+const result = arr.my_push(66);
+
+console.log(result);
+console.log(arr);
